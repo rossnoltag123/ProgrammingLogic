@@ -1,10 +1,13 @@
 ﻿//using System.Collections;
 //using System.Collections.Generic;
 //using UnityEngine;
+using UnityEngine.UI;
 
 public class EnergyConsumer {
 
 	private string name;
+
+	private Slider powerSlider, coolantSlider, heatSlider;
 
 	// no. of units of energy consumed per time unit
 	// during normal operation - when currEnergyMultiplier = 1.0f
@@ -31,9 +34,9 @@ public class EnergyConsumer {
 
 	public string Name { get { return name; } }
 
-	public float GetCurrentEnergyConsumption() {
+	/*public float GetCurrentEnergyConsumption() {
 		return currentEnergyMultiplier * baseEnergyConsumption;
-	}
+	}*/
 
 	//----
 	public float CurrentEnergyMultiplier {
@@ -53,4 +56,16 @@ public class EnergyConsumer {
 	}
 
 	public float EnergyConsumption { get { return currentEnergyMultiplier * baseEnergyConsumption; } }
+
+	/*public void SetSliders(Slider powerSlider, Slider coolantSlider, Slider heatSlider) {
+		this.powerSlider = powerSlider;
+		this.coolantSlider = coolantSlider;
+		this.heatSlider = heatSlider;
+	}*/
+
+	public void SetSliders(Slider[] sliders) {
+		powerSlider = sliders [0];
+		coolantSlider = sliders [1];
+		heatSlider = sliders [2];
+	}
 }
