@@ -12,13 +12,7 @@ public class EnergyDistributionController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//----
-		// just testing
-		List<EnergyConsumer> consumers = distModel.Consumers;
-		foreach (EnergyConsumer consumer in consumers) {
-			Debug.Log (consumer.Name);
-		}
-		//----
+
 	}
 	
 	// Update is called once per frame

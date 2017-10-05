@@ -10,9 +10,21 @@ public class EnergyDistributionView : MonoBehaviour {
 	private EnergyDistributionModel distModel;
 
 	void Awake() {
-		EnergyDistributionController distController = GetComponentInParent<EnergyDistributionController> ();
+		string message = "Connected consumers:\n";
+		EnergyDistributionController distController = GetComponent<EnergyDistributionController> ();
 		distModel = distController.DistributionModel;
-		Debug.Log (distModel.ToString());
+		List<EnergyConsumer> consumers = distModel.Consumers;
+		foreach (EnergyConsumer consumer in consumers) {
+			message += "" 
+				+ consumer.Name.ToUpper() 
+				+ " pwr setting: " 
+				+ consumer.CurrentEnergyMultiplier 
+				+ " pwr cons.: "
+				+ consumer.GetCurrentEnergyConsumption()
+				+ "\n";
+		}
+
+		connectedConsumers.text = message;
 	}
 
 	// Use this for initialization

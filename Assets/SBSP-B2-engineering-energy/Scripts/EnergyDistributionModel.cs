@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class EnergyDistributionModel {
 
+	//
+
 	//list of energy consumers
 	private List<EnergyConsumer> consumers;
 
