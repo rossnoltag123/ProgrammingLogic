@@ -25,4 +25,6 @@ public class EnergyDistributionController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public EnergyDistributionModel DistributionModel { get { return distModel; } }
 }
