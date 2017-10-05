@@ -2,12 +2,12 @@
 //using System.Collections.Generic;
 //using UnityEngine;
 
-public class EnergyConsumerModel {
+public class EnergyConsumer {
 
 	private string name;
 
 	// no. of units of energy consumed per time unit
-	// during normal operation - currEnergyMultiplier = 1.0f
+	// during normal operation - when currEnergyMultiplier = 1.0f
 	private float baseEnergyConsumption;
 
 	// < 1.0f - underperforming
@@ -24,28 +24,33 @@ public class EnergyConsumerModel {
 	//public float heatLevel;
 	//--
 
-	public EnergyConsumerModel(string name, float baseEnergyConsumption) {
+	public EnergyConsumer(string name, float baseEnergyConsumption) {
 		this.name = name;
 		this.baseEnergyConsumption = baseEnergyConsumption;
 	}
 
-	public string GetName { get { return name; } }
+	public string Name { get { return name; } }
 
 	public float GetCurrentEnergyConsumption() {
 		return currentEnergyMultiplier * baseEnergyConsumption;
 	}
 
-	public float GetCurrentEnergyMultiplier() {
-		return currentEnergyMultiplier;
+	//----
+	public float CurrentEnergyMultiplier {
+		get {
+			return currentEnergyMultiplier;
+		}
+		set  {
+			if (value <= MAX_ENERGY_OVERDRIVE) {
+				currentEnergyMultiplier = value;
+			} else if (value > MAX_ENERGY_OVERDRIVE) {
+				currentEnergyMultiplier = MAX_ENERGY_OVERDRIVE;
+			} else {
+				currentEnergyMultiplier = 0;
+			}
+		}
+		
 	}
 
-	public bool SetCurrentEnergyMultiplier(float multiplier) {
-		if (multiplier <= MAX_ENERGY_OVERDRIVE) {
-			currentEnergyMultiplier = multiplier;
-			return true;
-		} else {
-			currentEnergyMultiplier = MAX_ENERGY_OVERDRIVE;
-			return false;
-		}
-	}
+	public float EnergyConsumption { get { return currentEnergyMultiplier * baseEnergyConsumption; } }
 }
