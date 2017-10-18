@@ -8,6 +8,7 @@ public class ReactorReWork : MonoBehaviour {
 	public int fuel;
 	public int energy;
 	public Text nrgLEVEL;
+	public Text storageLevel;
 	public Canvas canvas;
 
 
@@ -20,6 +21,7 @@ public class ReactorReWork : MonoBehaviour {
 		energy = 0;
 		EnergyStorage energyStorage = new EnergyStorage ();
 		CreateEnergy createEnergy = new CreateEnergy ();
+		InvokeRepeating("Producing", 1.0f, 1.0f);
 
 	}
 
@@ -27,7 +29,6 @@ public class ReactorReWork : MonoBehaviour {
 	void Update () {
 		CheckEnergy ();
 		CheckingStorage ();
-		InvokeRepeating("Producing", 1.0f, 1.0f);
 
 	}
 
@@ -39,7 +40,7 @@ public class ReactorReWork : MonoBehaviour {
 
 	public void CheckEnergy(){
 
-		nrgLEVEL.text = "energy level :" + energy;
+		nrgLEVEL.text = "Energy level: " + energy;
 	}
 
 	public void CheckingStorage(){
@@ -48,6 +49,8 @@ public class ReactorReWork : MonoBehaviour {
 //			energyStorage.GetOkToDistribute (true);
 
 			energyStorage.SetCurrentCapacity (energyStorage.GetCurrentCapacity() + 500);
+			storageLevel.text = "Energy storage current capacity: " + energyStorage.GetCurrentCapacity();
+
 			energy -= 500;
 		}
 
