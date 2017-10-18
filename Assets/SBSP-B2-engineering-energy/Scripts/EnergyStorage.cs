@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class EnergyStorage{
+public class EnergyStorage {
 
 	public int currentCapacity;
 	public bool maxCapacity;
