@@ -9,9 +9,15 @@ public class EnergyConsumer {
 
 	private Slider powerSlider, coolantSlider, heatSlider;
 
+    public Slider PowerSlider { get { return powerSlider; } }
+    public Slider CoolantSlider { get { return coolantSlider; } }
+    public Slider HeatSlider { get { return heatSlider; } }
+
 	// no. of units of energy consumed per time unit
 	// during normal operation - when currEnergyMultiplier = 1.0f
 	private float baseEnergyConsumption;
+
+    public float BaseEnergyConsumption { get { return baseEnergyConsumption; } }
 
 	// < 1.0f - underperforming
 	// = 1.0f - normal operation
