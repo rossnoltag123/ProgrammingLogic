@@ -53,7 +53,7 @@ public class EnergyStorage {
 		return storageType;
 	}
 
-	public void SetStorageTyep(){
+	public void SetStorageType(string storageType){
 		this.storageType = storageType;
 	}
 
