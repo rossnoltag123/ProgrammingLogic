@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,9 +15,8 @@ public class EnergyStorage {
 		currentCapacity = 0;
 		maxCapacity = false;
 		okToDistribute = false;
-		/// testing
-	}
-
+    storageType = "";
+    }
 
 	public int GetCurrentCapacity(){
 		return currentCapacity;
@@ -27,8 +26,6 @@ public class EnergyStorage {
 		this.currentCapacity = currentCapacity;
 	}
 
-
-
 	public bool GetMaxCapacity(){
 		return maxCapacity;
 	}
@@ -36,8 +33,6 @@ public class EnergyStorage {
 	public void SetMaxCapacity(bool maxCapacity){
 		this.maxCapacity = maxCapacity;
 	}
-
-
 
 	public bool GetOkToDistribute(){
 		return okToDistribute;
@@ -47,17 +42,11 @@ public class EnergyStorage {
 		this.okToDistribute = okToDistribute;
 	}
 
-
-
 	public string GetStrorageType(){
 		return storageType;
 	}
-
+  
 	public void SetStorageType(string storageType){
 		this.storageType = storageType;
 	}
-
-
-
-
 }
