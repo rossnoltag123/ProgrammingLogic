@@ -49,7 +49,7 @@ public class ReactorReWork : MonoBehaviour {
 //			energyStorage.GetOkToDistribute (true);
 
 			energyStorage.SetCurrentCapacity (energyStorage.GetCurrentCapacity() + 500);
-			storageLevel.text = "Energy storage current capacity: " + energyStorage.GetCurrentCapacity();
+			storageLevel.text = "Energy storage: " + energyStorage.GetCurrentCapacity();
 
 			energy -= 500;
 		}

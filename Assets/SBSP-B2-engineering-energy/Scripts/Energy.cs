@@ -8,9 +8,6 @@ public class Energy{
 	public string energyType;
 	public int energyQuantity;
 
-
-
-
 	public string GetEnergyType(){
 		return energyType;
 	}
@@ -18,9 +15,6 @@ public class Energy{
 	public void SetEnergyType(string energyType){
 		this.energyType = energyType;
 	}
-
-
-
 
 	public int GetEnergyUnit(){
 		return energyUnit;
@@ -30,10 +24,6 @@ public class Energy{
 		this.energyUnit = energyUnit;
 	}
 
-
-
-
-
 	public int GetEnergyQuantity(){
 		return energyQuantity;
 	}
@@ -41,5 +31,4 @@ public class Energy{
 	public void SetEnergyQuantity(int energyQuantity){
 		this.energyQuantity = energyQuantity;
 	}
-
 }

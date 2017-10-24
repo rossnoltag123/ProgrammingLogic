@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class EnergyStorage {
 		currentCapacity = 0;
 		maxCapacity = false;
 		okToDistribute = false;
-        storageType = "";
+    storageType = "";
     }
 
 	public int GetCurrentCapacity(){
@@ -45,9 +45,8 @@ public class EnergyStorage {
 	public string GetStrorageType(){
 		return storageType;
 	}
-
-    public void SetStorageType(string storageType)
-    {
-        this.storageType = storageType;
-    }
+  
+	public void SetStorageType(string storageType){
+		this.storageType = storageType;
+	}
 }
