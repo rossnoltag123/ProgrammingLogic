@@ -13,7 +13,6 @@ public class EnergyDistributionView : MonoBehaviour {
 	private List<GameObject> sliderGroups;
 
 	void Awake() {
-		//string message = "Connected consumers:\n";
 		EnergyDistributionController distController = GetComponent<EnergyDistributionController> ();
 		distModel = distController.DistributionModel;
 		consumers = distModel.Consumers;
@@ -22,7 +21,7 @@ public class EnergyDistributionView : MonoBehaviour {
 
 		//-------------------
 		sliderGroups = new List<GameObject> ();
-		int x = 0;
+		int x = -100;
 		foreach (EnergyConsumer consumer in consumers) {
 			GameObject sliderGroup = Instantiate (sliderGroupPrefab, new Vector3 (x, 0, 0), Quaternion.identity) as GameObject;
 			Slider[] sliders = sliderGroup.GetComponentsInChildren<Slider> () as Slider[];

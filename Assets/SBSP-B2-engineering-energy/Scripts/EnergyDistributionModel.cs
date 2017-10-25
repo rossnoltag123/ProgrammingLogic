@@ -18,6 +18,7 @@ public class EnergyDistributionModel {
 		consumers.Add (new EnergyConsumer ("Beam", 1.0f));
 		consumers.Add (new EnergyConsumer ("Missiles", 3.0f));
 		consumers.Add (new EnergyConsumer ("Headlights", 0.3f));
+        consumers.Add(new EnergyConsumer("Fridge", 2.5f));
 	}
 		
 	public List<EnergyConsumer> Consumers { get { return consumers; } }
