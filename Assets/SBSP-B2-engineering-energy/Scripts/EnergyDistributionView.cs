@@ -12,6 +12,9 @@ public class EnergyDistributionView : MonoBehaviour {
 	private List<EnergyConsumer> consumers;
 	private List<GameObject> sliderGroups;
 
+	private int slidersOffsetX = 100;
+	private int slidersOffsetY = -250;
+
 	void Awake() {
 		EnergyDistributionController distController = GetComponent<EnergyDistributionController> ();
 		distModel = distController.DistributionModel;
@@ -21,14 +24,9 @@ public class EnergyDistributionView : MonoBehaviour {
 
 		//-------------------
 		sliderGroups = new List<GameObject> ();
-		int x = -100;
+
 		foreach (EnergyConsumer consumer in consumers) {
-			GameObject sliderGroup = Instantiate (sliderGroupPrefab, new Vector3 (x, 0, 0), Quaternion.identity) as GameObject;
-			Slider[] sliders = sliderGroup.GetComponentsInChildren<Slider> () as Slider[];
-			consumer.SetSliders (sliders);
-			x += 100;
-			sliderGroup.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
-			sliderGroups.Add(sliderGroup);
+			InstantiateSliders (consumer);
 		}
 
 
@@ -61,5 +59,18 @@ public class EnergyDistributionView : MonoBehaviour {
 				+ "\n";
 		}
 		connectedConsumers.text = message;
+	}
+
+	public void InstantiateSliders (EnergyConsumer consumer) {
+		GameObject sliderGroup = Instantiate (sliderGroupPrefab, new Vector3 (slidersOffsetX, slidersOffsetY, 0), Quaternion.identity) as GameObject;
+
+		Text label = sliderGroup.GetComponentInChildren<Text>();
+		label.text = consumer.Name;
+
+		Slider[] sliders = sliderGroup.GetComponentsInChildren<Slider> () as Slider[];
+		consumer.SetSliders (sliders);
+		slidersOffsetX += 100;
+		sliderGroup.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
+		sliderGroups.Add(sliderGroup);
 	}
 }
