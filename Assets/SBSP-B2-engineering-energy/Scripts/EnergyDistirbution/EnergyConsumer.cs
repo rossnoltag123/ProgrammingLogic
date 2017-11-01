@@ -3,42 +3,54 @@
 //using UnityEngine;
 using UnityEngine.UI;
 
-public class EnergyConsumer {
+public class EnergyConsumer : IEnergyConsumer {
 
-	private string name;
+	// -------------------------------------
+	// implementation of IEnergyConsumer
 
-	private Slider powerSlider, coolantSlider, heatSlider;
+	// protected -- visible to this class and subclasses
+	protected string name;
+	public string Name { get { return name; } }
 
-    public Slider PowerSlider { get { return powerSlider; } }
-    public Slider CoolantSlider { get { return coolantSlider; } }
-    public Slider HeatSlider { get { return heatSlider; } }
+	protected Slider powerSlider, coolantSlider, heatSlider;
+	public Slider PowerSlider { 
+		get { return powerSlider; }
+		set { powerSlider = value; }
+	}
+	public Slider CoolantSlider { 
+		get { return coolantSlider; }
+		set { coolantSlider = value; }
+	}
+    public Slider HeatSlider { 
+		get { return heatSlider; }
+		set { heatSlider = value; }
+	}
 
 	// no. of units of energy consumed per time unit
 	// during normal operation - when currEnergyMultiplier = 1.0f
-	private float baseEnergyConsumption;
-
+	protected float baseEnergyConsumption;
     public float BaseEnergyConsumption { get { return baseEnergyConsumption; } }
 
 	// < 1.0f - underperforming
 	// = 1.0f - normal operation
 	// > 1.0f - overdrive
-	private float currentEnergyMultiplier = 1.0f;
+	protected float currentEnergyMultiplier = 1.0f;
+
+	protected float heatFactor;
+	public float HeatFactor { get { return heatFactor; } }
 
 
-	private const float MAX_ENERGY_OVERDRIVE = 2.0f;
+	protected const float MAX_ENERGY_OVERDRIVE = 2.0f;
+	public float MaxEnergyOverdrive { get { return MAX_ENERGY_OVERDRIVE; } }
 
-	// ---- to add later -----
-	//private float currCoolantLevel = 0.0f;
-	//private const float MAX_COOLANT_LEVEL = 1.0f;
-	//public float heatLevel;
-	//--
+	// -------------------------------------
 
 	public EnergyConsumer(string name, float baseEnergyConsumption) {
 		this.name = name;
 		this.baseEnergyConsumption = baseEnergyConsumption;
 	}
 
-	public string Name { get { return name; } }
+
 
 	/*public float GetCurrentEnergyConsumption() {
 		return currentEnergyMultiplier * baseEnergyConsumption;

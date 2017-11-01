@@ -12,11 +12,10 @@ public class EnergyStorage {
 
 	public EnergyStorage(){
 		GetCurrentCapacity ();
-		//100 for testing, change back to zero
-		currentCapacity = 100;
+		currentCapacity = 0;
 		maxCapacity = false;
 		okToDistribute = false;
-    storageType = "";
+    	storageType = "";
     }
 
 	public int GetCurrentCapacity(){

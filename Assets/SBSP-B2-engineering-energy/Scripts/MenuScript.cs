@@ -8,7 +8,7 @@ public class MenuScript : MonoBehaviour {
 	string reactorChamberScene = "reactor-test-system";
 
 	public void GoToEnergyDistributions(){
-		Application.LoadLevel (distributionScene);
+		//Application.LoadLevel (distributionScene);
 	}
 
 	public void GoToEnergyReactorChamber(){
