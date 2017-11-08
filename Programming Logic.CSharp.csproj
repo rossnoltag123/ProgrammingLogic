@@ -81,12 +81,14 @@
     <Compile Include="Assets\Scripts\ButtonsModel.cs" />
     <Compile Include="Assets\Scripts\ButtonsView.cs" />
     <Compile Include="Assets\Scripts\DestroyTiles.cs" />
+    <Compile Include="Assets\Scripts\Dragable.cs" />
     <Compile Include="Assets\Scripts\LevelController.cs" />
     <Compile Include="Assets\Scripts\LevelModel.cs" />
     <Compile Include="Assets\Scripts\LevelView.cs" />
     <Compile Include="Assets\Scripts\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Slots.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

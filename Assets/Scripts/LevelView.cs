@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelView : MonoBehaviour
 {
     public GameObject tilePrefab;
-    public GameObject tileContainerGO;
+   // public GameObject tileContainerGO;
     private LevelModel levelModel;
     public int mapSize;
     public GameObject[,] tiles;
@@ -53,7 +53,7 @@ public class LevelView : MonoBehaviour
         //SetParent(findTileClones);
         // newTile.localScale = Vector3.one * (1 - tileOutline);
 ;
-        newTile.transform.parent = tileContainerGO.transform;
+       // newTile.transform.parent = tileContainerGO.transform;
     }
 
     public void DestroyTiles()
