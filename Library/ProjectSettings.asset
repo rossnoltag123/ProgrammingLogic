@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  productGUID: f16f6110b5593684fbd6e2c909c3c2e8
+  productGUID: 1c6791dc9b0b28b40b84061cfdab61f7
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
@@ -589,9 +589,9 @@ PlayerSettings:
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 58a4a0eb-8ba8-4675-9d8a-88d47a18c3e5
-  projectName: Programming Logic
-  organizationId: noltag
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
